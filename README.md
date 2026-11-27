@@ -38,6 +38,18 @@ get_last_result() → parsed assessment
 - **Relayer:** Node HTTP server using `genlayer-js`. Keeps the private key server-side.
 - **Contract:** `AllergyGuard` at `0xCC13DB169A50db1c0B0E9fC327A9825F6Ac76151` on StudioNet.
 
+## Smart contract
+
+The Intelligent Contract source is included at [`contracts/allergyguard.py`](contracts/allergyguard.py).
+
+- **Contract name:** `AllergyGuard`
+- **Network:** GenLayer StudioNet
+- **Address:** `0xCC13DB169A50db1c0B0E9fC327A9825F6Ac76151`
+- **Write method:** `check_food(food_name, allergy_names)`
+- **View methods:** `get_last_result()`, `get_check_count()`
+
+The contract researches known ingredients through web sources, uses an LLM prompt to assess them against the declared allergies, and requires independent GenLayer validators to agree on the risk level and allergen matches before finalizing the result.
+
 ## Setup
 
 Requirements: Node.js 20+ and npm.
